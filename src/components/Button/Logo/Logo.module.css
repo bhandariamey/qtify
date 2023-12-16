@@ -1,0 +1,12 @@
+.brandLogo{   
+    margin-left: 39px;
+    line-height: 24px;
+}
+
+.headphone{
+    position: absolute;
+    left: 32px;
+    top: 17px;
+    width: 28px;
+    height: 24px;
+}

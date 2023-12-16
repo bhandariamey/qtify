@@ -1,0 +1,29 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    width: 568px;
+    height: 48px;
+}
+
+.inputArea{
+    border-radius: 8px 0px 0px 8px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    width: 502px;
+    padding: 14px 20px;
+    border: 1px solid var(--color-black);
+    font-family: "lato";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.searchButton{
+    border-radius: 0px 8px 8px 0px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 14px 20px;
+    border-left: none;
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+}
