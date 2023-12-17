@@ -12,7 +12,7 @@ function App() {
       
       <nav className="navbar">
         <Logo/>
-        <Searchbar placeholder={"Search a album of your choice"}></Searchbar>
+        <Searchbar placeholder={"Search a song of your choice"}></Searchbar>
         <Button children={"Give Feedback"}></Button>
       </nav>
 
@@ -23,6 +23,7 @@ function App() {
 
       <div className="faqSection">
         <FaqText/>
+
       </div>
     </>
   );
