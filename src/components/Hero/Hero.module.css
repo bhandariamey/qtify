@@ -1,21 +1,10 @@
 .heroWrapper{
     display: flex;
     justify-content: center;
+    height: 270px;
     background-color: var(--color-black);
-
-}
-.heroText p{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 48px;
-    color: var(--color-white);
-}
+    text-align: center;
+    gap: 30px;
 
-.heroImage img{
-    width: 212px;
-    height: 212px;
 }

@@ -3,12 +3,12 @@ import styles from './Hero.module.css'
 export default function Hero(){
     return(<>
         <div className={styles.heroWrapper}>
-            <div className={styles.heroText}>
-                <p>100 Thousand Songs, ad-free</p>
-                <p>Over thousands podcast episodes</p>
+            <div >
+                <h1>100 Thousand Songs, ad-free</h1>
+                <h1>Over thousands podcast episodes</h1>
             </div>
-            <div className={styles.heroImage}>
-                <img src={HeroImage} alt="Hero" />
+            <div>
+                <img src={HeroImage} alt="Headphone" width={112} />
             </div>
         </div>
     </>)
