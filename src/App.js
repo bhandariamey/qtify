@@ -1,6 +1,7 @@
 
 import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx';
+import Hero from './components/Hero/Hero.jsx';
 import { useState } from 'react';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Navbar searchData={searchData}/>
+      <Hero/>
     </>
   );
 }

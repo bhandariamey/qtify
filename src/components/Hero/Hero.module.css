@@ -1,0 +1,21 @@
+.heroWrapper{
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-black);
+
+}
+.heroText p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: var(--color-white);
+}
+
+.heroImage img{
+    width: 212px;
+    height: 212px;
+}
