@@ -1,3 +1,10 @@
+
+.gridContainerStyle{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  column-gap: 20px;
+};
+
 .Wrapper{
     width: 160px;
 }
@@ -14,6 +21,7 @@
     width: 100%;
     object-fit: contain;
 }
+
 
 .Banner{
     position: absolute;
