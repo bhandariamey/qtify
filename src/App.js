@@ -1,60 +1,39 @@
 
 import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx';
-import Hero from './components/Hero/Hero.jsx';
 import Card from './components/Card/Card.jsx';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import React , { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import { fetchNewAlbums, fetchSongs, fetchTopAlbums } from './Api/Api.js';
 
 
 function App() {
+
   const [searchData, useSearchData] = useState()
-  const [albumData, setAlbumData] = useState([])
-  const [newAlbumData, setNewAlbumData] = useState([])
+  const [data,setData] = useState({})
 
-
-  const callAlbumApi = async()=>{
-    try{
-      console.log("API call")
-      const API = "https://qtify-backend-labs.crio.do/albums/top"
-      const response = await axios.get(API)
-      if(response.status === 200){
-        console.log(response.data);
-        setAlbumData(response.data)
-      }
-    }
-      catch(e){
-        console.log("Error fetching data");
-      }
+  const generateData=(key,source)=>{
+    source().then((data)=>{
+      setData((prevdata)=>{
+        return{...prevdata, [key]:data}
+      })
+    })
   }
 
-  const callNewAlbumApi = async()=>{
-    try{
-      console.log("API call")
-      const API = "https://qtify-backend-labs.crio.do/albums/new"
-      const response = await axios.get(API)
-      if(response.status === 200){
-        console.log(response.data);
-        setNewAlbumData(response.data)
-      }
-    }
-      catch(e){
-        console.log("Error fetching data");
-      }
-  }
-  
   useEffect(()=>{
-    callAlbumApi()
-    callNewAlbumApi()
+    generateData('topAlbums', fetchTopAlbums)
+    generateData('newAlbums', fetchNewAlbums)
+    generateData('songs', fetchSongs)
   },[])
 
-  return (
-    <>
-      <Navbar searchData={searchData}/>
-      <Hero/>
-      {albumData.length>0 && <Card data={albumData} type={'album'}/>}
-      {albumData.length>0 && <Card data={newAlbumData} type={'album'}/>}
+  const {topAlbums=[], newAlbums=[], songs=[]} = data // setting default values when data is empty
 
+   return (
+    <>
+      <div>
+        <Navbar searchData={[...topAlbums, ...newAlbums]}/>
+        <Outlet context = {{data: {topAlbums, newAlbums, songs} }}/>
+      </div>
     </>
   );
 }

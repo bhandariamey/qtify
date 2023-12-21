@@ -1,9 +1,4 @@
 
-.gridContainerStyle{
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  column-gap: 20px;
-};
 
 .Wrapper{
     width: 160px;
@@ -53,6 +48,6 @@
 
 .Chip
 {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-black) !important;
+    color: var(--color-white) !important;
 }
