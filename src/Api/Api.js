@@ -29,7 +29,7 @@ export const fetchSongs = async()=>{
     }
 }
 
-export const fetchGenre = async()=>{
+export const fetchFilters = async()=>{
     try{
         const response = await axios.get(BACKEND_API+'/genres')
         return response.data}
